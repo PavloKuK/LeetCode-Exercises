@@ -16,27 +16,20 @@ public class RemoveElement {
     }
 
 
-    public static int removeElement(int[] nums, int val) {
+   public static int removeElement(int[] nums, int val) {
+
+        int n = nums.length;
 
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] == val) {
                 nums[i] = val + 100;
+                n--;
             }
         }
 
         Arrays.sort(nums);
 
-        int count = 0;
-
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] != (val + 100)) {
-                count++;
-            } else {
-                break;
-            }
-        }
-
-        return count;
+        return n;
     }
 }
 
